@@ -1,34 +1,22 @@
 {
-  "name": "justgo",
+  "name": "just-go",
   "version": "1.0.0",
-  "description": "Find a City, Find a Friend",
-  "main": "index.js",
-  "dependencies": {
-    "body-parser": "^1.15.2",
-    "express": "^4.14.0",
-    "express-handlebars": "^3.0.0",
-    "method-override": "^2.3.6",
-    "mysql": "^2.11.1",
-    "path": "^0.12.7",
-    "request": "^2.74.0",
-    "sequelize": "^3.23.6"
-  },
+  "description": "A team project for the UT Coding Bootcamp",
+  "main": "app.js",
+  "dependencies": {},
   "devDependencies": {},
-  "engines": {
-    "node": "6.2.2"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jameshornung/justGo.git"
+    "url": "git+https://github.com/jimmiejackson414/just-go.git"
   },
-  "author": "The Go Team",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jameshornung/justGo/issues"
+    "url": "https://github.com/jimmiejackson414/just-go/issues"
   },
-  "homepage": "https://github.com/jameshornung/justGo#readme"
+  "homepage": "https://github.com/jimmiejackson414/just-go#readme"
 }
