@@ -3,7 +3,15 @@
   "version": "1.0.0",
   "description": "A team project for the UT Coding Bootcamp",
   "main": "app.js",
-  "dependencies": {},
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.6",
+    "path": "^0.12.7",
+    "request": "^2.74.0",
+    "sequelize": "^3.23.6"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
