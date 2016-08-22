@@ -1,9 +1,14 @@
+//////////////////
+// Dependencies //
+//////////////////
+
 var express = require('express');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var router = express.Router();
 var request = require('request');
 var selection =require('../public/assets/js/cityPicker.js');
+var User = require('../lib/user.js');
 
 //Obtains Athorization for HomeAway API  
 var authorize = {
@@ -54,6 +59,29 @@ router.get('/sequelize', function(req,res, body){
     res.render('sequelize');
 });
 
+router.post('/register', function(req, res) {
+    var username = req.body.username;
+    var password = req.body.password;
+    var email = req.body.email;
+    var firstName = req.body.firstName;
+    var lastName = req.body.lastName;
+
+    var newUser = new User();
+    newUser.username = username;
+    newUser.password = password;
+    newUser.email = email;
+    newUser.firstName = firstName;
+    newUser.lastName = lastName;
+    newUser.save(function(err, savedUser) {
+        if(err) {
+            console.log(err);
+            return res.status(500).send();
+        } else {
+            return res.status(200).send();
+        }
+    })
+
+});
 
 
 router.post('/listings', function(req, res) {

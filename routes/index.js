@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var User = require('../lib/user.js')
+var User = require('../lib/user')
 
 
 // GET home page
@@ -9,7 +9,7 @@ router.get('/', function(req, res next) {
 });
 
 
-router.post('register', function(req, res) {
+router.post('/register', function(req, res) {
 	var username = req.body.username;
 	var password = req.body.password;
 	var email = req.body.email;
