@@ -11,14 +11,35 @@ app.set('view engine', 'handlebars');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(process.cwd() + '/public'));
 
-var mongojs = require('mongojs');
+// var mongojs = require('mongojs');
 var databaseUrl = 'localhost/mongoapp';
 var collections = 'users';
 
-var db = mongojs(databaseUrl, collections);
-db.on('error', function(err) {
-	console.log('Database error:', err);
-});
+
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/user');
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function(){
+	console.log("We're connected");
+})
+
+// var kitty = new Cat({ name: 'Zildjian' });
+// kitty.save(function (err) {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log('meow');
+//   }
+// });
+
+
+
+// var db = mongojs(databaseUrl, collections);
+// db.on('error', function(err) {
+// 	console.log('Database error:', err);
+// });
 
 var routes = require('./controllers/controller.js');
 app.use('/', routes);
