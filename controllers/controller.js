@@ -1,4 +1,4 @@
-//////////////////
+//////////////////  
 // Dependencies //
 //////////////////
 
@@ -55,15 +55,15 @@ router.get('/friends', function(req,res, body){
     res.render('friends');
 });
 
-router.get('/signup', function(req,res, body){
-    res.render('signup');
-});
+// router.get('/signup', function(req,res, body){
+//     res.render('signup');
+// });
 
 router.get('/sequelize', function(req,res, body){
     res.render('sequelize');
 });
 
-router.post('/register', function(req, res) {
+router.post('/signup', function(req, res) {
     var username = req.body.username;
     var password = req.body.password;
     var email = req.body.email;

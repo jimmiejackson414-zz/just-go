@@ -11,6 +11,15 @@ app.set('view engine', 'handlebars');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(process.cwd() + '/public'));
 
+var mongojs = require('mongojs');
+var databaseUrl = 'localhost/mongoapp';
+var collections = 'users';
+
+var db = mongojs(databaseUrl, collections);
+db.on('error', function(err) {
+	console.log('Database error:', err);
+});
+
 var routes = require('./controllers/controller.js');
 app.use('/', routes);
 
