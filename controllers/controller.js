@@ -55,6 +55,10 @@ router.get('/friends', function(req,res, body){
     res.render('friends');
 });
 
+router.get('/signup', function(req,res, body){
+    res.render('signup');
+});
+
 router.get('/sequelize', function(req,res, body){
     res.render('sequelize');
 });
