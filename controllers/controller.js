@@ -20,6 +20,7 @@ var authorize = {
     }
 };
 
+
 //global variable to hold selected city
 var city;
 var cityId;
@@ -60,14 +61,12 @@ router.get('/signup', function(req,res, body){
 });
 
 router.post('/signup', function(req, res) {
-    var username = req.body.username;
     var password = req.body.password;
     var email = req.body.email;
     var firstName = req.body.firstName;
     var lastName = req.body.lastName;
-
+    console.log("THIS IS BODY",req.body);
     var newUser = new User();
-    newUser.username = username;
     newUser.password = password;
     newUser.email = email;
     newUser.firstName = firstName;
@@ -75,13 +74,25 @@ router.post('/signup', function(req, res) {
     newUser.save(function(err, savedUser) {
         if(err) {
             console.log(err);
-            return res.status(500).send();
+            return res.status(500).send({error: "error saving suer info"});
         } else {
             return res.status(200).send();
+            // res.redirect
         }
     })
 
 });
+
+router.get('/users', function(req, res) {
+    User.find({}, function(err, found) {
+        if(err) {
+            console.log(err);
+        }
+        else {
+            res.json(found);
+        }
+    })
+})
 
 
 router.post('/listings', function(req, res) {

@@ -12,12 +12,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(process.cwd() + '/public'));
 
 // var mongojs = require('mongojs');
-var databaseUrl = 'localhost/mongoapp';
-var collections = 'users';
+var databaseUrl = 'userDB';
+var collections = ['users'];
 
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/user');
+mongoose.connect('mongodb://localhost/userDB');
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -44,9 +44,11 @@ db.once('open', function(){
 var routes = require('./controllers/controller.js');
 app.use('/', routes);
 
+
 //MAKE THE CONNECTION=================================================
 var PORT = process.env.PORT || 3000;
 app.listen(PORT, function() {
     console.log('Listening on: ' + PORT);
 });
+
 
