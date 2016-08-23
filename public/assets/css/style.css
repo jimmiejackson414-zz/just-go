@@ -1,3 +1,12 @@
+/* ////// */
+/* GLOBAL */
+/* ////// */
+
+.signupFormIcon {
+    color:black;
+}
+
+
 /* ///////// */
 /* HOME PAGE */
 /* ///////// */
@@ -106,6 +115,10 @@ input, label {
 
 .icon-grey {
     color:#676767;
+}
+
+.error {
+    color:red;
 }
 
 

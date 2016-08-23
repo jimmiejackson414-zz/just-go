@@ -1,6 +1,4 @@
-//////////////////  
-// Dependencies //
-//////////////////
+// Dependencies ===========================================================
 
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -10,7 +8,7 @@ var request = require('request');
 var selection =require('../public/assets/js/cityPicker.js');
 var User = require('../lib/user.js');
 
-//Obtains Athorization for HomeAway API  
+//Obtains Athorization for HomeAway API ====================================
 var authorize = {
     method: 'POST',
     url: 'https://ws.homeaway.com/oauth/token',
@@ -20,12 +18,11 @@ var authorize = {
     }
 };
 
-
 //global variable to hold selected city
 var city;
 var cityId;
 
-//===================================================================
+// Routes ===================================================================
 
 router.get('/', function(req, res, next) {
     request(authorize, function(error, response, body) {
@@ -74,10 +71,10 @@ router.post('/signup', function(req, res) {
     newUser.save(function(err, savedUser) {
         if(err) {
             console.log(err);
-            return res.status(500).send({error: "error saving suer info"});
+            return res.status(500).send({error: "error saving user info"});
         } else {
             return res.status(200).send();
-            // res.redirect
+            res.redirect('/city');
         }
     })
 
@@ -93,7 +90,6 @@ router.get('/users', function(req, res) {
         }
     })
 })
-
 
 router.post('/listings', function(req, res) {
     // console.log('body = ', req.body);
