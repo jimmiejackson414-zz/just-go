@@ -1,44 +1,26 @@
+{{!-- Navigation Bar --}}
+<nav>
+	<div class='container'>
+	    <div class="nav-wrapper">
+	      <a href="/" class="brand-logo">justgo</a>
+	      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+	      <ul class="right hide-on-med-and-down">
+	        <li><a href="/">Logout</a></li>
+	      </ul>
+	      <ul class="side-nav" id="mobile-demo">
+	        <li><a href="/">Logout</a></li>
+	      </ul>
+	    </div>
+	 </div>
+  </nav>
+<br>
+<br>
+<br>
 
 <div class = "container">
 <div class="row" style="text-align:center">
 <h2 id="formTitle">tell us about your trip!</h2>
 </div>
-	
-	<div class = 'row'>
-			<form class = 'col s12' id = 'personalInfoForm' action='/personal' method='post'>
-				<div class = 'card-panel'>
-				<h5>Personal Information:</h5>
-					<div class = 'row'>
-						<div class="input-field col s6">
-							<i class="material-icons prefix icon-grey">perm_identity</i>
-							<input id="first_name" type="text" class="validate">
-		          			<label for="first_name">First Name</label>
-		          		</div>
-		          		<div class="input-field col s6">
-		          			<i class="material-icons prefix icon-grey">perm_identity</i>
-							<input id="last_name" type="text" class="validate">
-		          			<label for="last_name">Last Name</label>
-		          		</div>
-					</div>
-					<div class = 'row'>
-						<div class = 'input-field col s6'>
-							<i class="material-icons prefix icon-grey">email</i>
-							<input id = 'email' type = 'email' class = 'validate'>
-							<label for = 'email'>Email</label>
-						</div>
-						<div class = 'input-field col s6'>
-							<i class="material-icons prefix icon-grey">phone</i>
-							<input id = 'phoneNumber' type = 'tel' class = 'validate'>
-							<label for = 'phoneNumber'>Phone Number</label>
-						</div>
-					</div>
-				</div>
-			</form>
-	</div>
-
-
-
-
 	<div class = 'row'>
 		<form class = 'col s12' id = "formBG" action='/listings' method='post'>
 	   				<div class="card-panel">

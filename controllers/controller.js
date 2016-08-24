@@ -62,12 +62,14 @@ router.post('/signup', function(req, res) {
     var email = req.body.email;
     var firstName = req.body.firstName;
     var lastName = req.body.lastName;
+    var phone = req.body.phone;
     console.log("THIS IS BODY",req.body);
     var newUser = new User();
     newUser.password = password;
     newUser.email = email;
     newUser.firstName = firstName;
     newUser.lastName = lastName;
+    newUser.phone = phone;
     newUser.save(function(err, savedUser) {
         if(err) {
             console.log(err);

@@ -3,7 +3,8 @@
 /* ////// */
 
 nav {
-    background-color: #757575;
+    background-color:rgba(43, 187, 173, 0.7);
+    /*opacity: 0.7;*/
 }
 
 .brand-logo {
