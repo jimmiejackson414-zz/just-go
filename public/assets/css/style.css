@@ -2,6 +2,14 @@
 /* GLOBAL */
 /* ////// */
 
+nav {
+    background-color: #757575;
+}
+
+.brand-logo {
+    font-family: 'Anton', sans-serif;
+}
+
 .signupFormIcon {
     color:black;
 }
@@ -117,9 +125,6 @@ input, label {
     color:#676767;
 }
 
-.error {
-    color:red;
-}
 
 
 /* //////////// */

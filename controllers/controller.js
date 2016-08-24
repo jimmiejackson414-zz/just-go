@@ -73,6 +73,7 @@ router.post('/signup', function(req, res) {
             console.log(err);
             return res.status(500).send({error: "error saving user info"});
         } else {
+            console.log ('Sucess:' , savedUser);
             res.redirect('/city');
             return res.status(200).send();
             

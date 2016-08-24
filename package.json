@@ -4,13 +4,17 @@
   "description": "A team project for the UT Coding Bootcamp",
   "main": "app.js",
   "dependencies": {
+    "bcrypt": "^0.8.7",
     "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
     "express": "^4.14.0",
     "express-handlebars": "^3.0.0",
+    "express-session": "^1.14.0",
     "jquery-validation": "^1.15.1",
     "method-override": "^2.3.6",
     "mongojs": "^2.4.0",
     "mongoose": "^4.5.9",
+    "nodemailer": "^2.5.0",
     "path": "^0.12.7",
     "request": "^2.74.0",
     "sequelize": "^3.23.6"
