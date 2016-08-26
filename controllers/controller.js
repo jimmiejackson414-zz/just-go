@@ -53,6 +53,37 @@ router.get('/friends', function(req,res, body){
     res.render('friends');
 });
 
+
+
+router.post('/signin', function(req, res, body) {
+    username = req.body.username;
+    password = req.body.password;
+    console.log(username);
+
+    // do magic here with mongoose to check if this user/pw combo exists within the database.  If it does `res.redirect('/homepage')`, else re-render your signin template with a new error variable to display in your login screen
+})
+
+User.findOne({ username: 'jmar777' }, function(err, user) {
+    if (err) throw err;
+
+    // // test a matching password
+    // user.comparePassword('Password123', function(err, isMatch) {
+    //     if (err) throw err;
+    //     console.log('Password123:', isMatch); // -&gt; Password123: true
+    // });
+
+    // test a failing password
+//     user.comparePassword('123Password', function(err, isMatch) {
+//         if (err) throw err;
+//         console.log('123Password:', isMatch); // -&gt; 123Password: false
+//     });
+});
+
+
+
+
+
+
 router.get('/signup', function(req,res, body){
     res.render('signup');
 });
